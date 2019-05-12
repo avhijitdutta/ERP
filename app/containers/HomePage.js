@@ -1,13 +1,39 @@
 // @flow
 import React, { Component } from 'react';
+import { push } from 'connected-react-router'
+import { bindActionCreators } from 'redux'
+import { connect } from 'react-redux'
+
+import routes from '../constants/routes';
 import Home from '../components/Home';
 
-type Props = {};
 
-export default class HomePage extends Component<Props> {
+type Props = {
+  changePage: Function
+};
+
+class HomePage extends Component<Props> {
   props: Props;
 
+  pageNavigate = () =>{
+    const {changePage} = this.props;
+    changePage();
+  }
+
   render() {
-    return <Home />;
+    return <Home navigate={this.pageNavigate}/>;
   }
 }
+
+const mapStateToProps = ({ counter }) => ({
+  count: counter.counter
+})
+
+const mapDispatchToProps = dispatch => bindActionCreators({
+  changePage: () => push(routes.COUNTER)
+}, dispatch)
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(HomePage)

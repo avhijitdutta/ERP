@@ -1,24 +1,26 @@
 // @flow
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
-import routes from '../constants/routes';
 import styles from './Home.css';
 
-type Props = {};
+type Props = {
+  navigate: Function
+};
 
-export default class Home extends Component{
-  // props: Props;
+export default class Home extends Component<Props>{
+  props: Props;
 
   handleSubmit = () => {
-    console.log(this.props);
+    const { navigate } = this.props;
+    navigate();
   }
 
   render() {
     return (
       <div className="container">
-          <form onSubmit={this.handleSubmit}>
+          <form className={styles.home} onSubmit={this.handleSubmit.bind(this)}>
             <div className="form-group">
-              <label htmlFor="exampleInputEmail1">Email address</label>
+              <label htmlFor="exampleInputEmail1">Email address
+              </label>
               <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" />
               <small id="emailHelp" className="form-text text-muted"> We'll never share your email with anyone else.</small>
             </div>

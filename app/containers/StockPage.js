@@ -5,14 +5,14 @@ import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 
 import routes from '../constants/routes';
-import Home from '../components/Home';
-
+import Stock from '../components/Stock';
+import Table from '../components/common/Table'
 
 type Props = {
   changePage: Function
 };
 
-class HomePage extends Component<Props> {
+class StockPage extends Component<Props> {
   props: Props;
 
   pageNavigate = () =>{
@@ -21,7 +21,10 @@ class HomePage extends Component<Props> {
   }
 
   render() {
-    return <Home navigate={this.pageNavigate}/>;
+    return <div>
+        <Stock/>
+        <Table/>
+      </div>;
   }
 }
 
@@ -36,4 +39,4 @@ const mapDispatchToProps = dispatch => bindActionCreators({
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(HomePage)
+)(StockPage)

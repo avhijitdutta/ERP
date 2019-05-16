@@ -4,7 +4,7 @@ import React, { Component } from 'react';
 type Props = {
 };
 
-export default class Stock extends Component<Props> {
+export default class Header extends Component<Props> {
   props: Props;
 
   render() {
@@ -18,6 +18,12 @@ export default class Stock extends Component<Props> {
 
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav mr-auto">
+            <li className="nav-item active">
+              <a className="nav-link">Stock List</a>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link">Product List</a>
+            </li>
             </ul>
             <form className="form-inline my-2 my-lg-0">
               <input className="form-control mr-sm-2" type="search" placeholder="Search Product" aria-label="Search Product"/>

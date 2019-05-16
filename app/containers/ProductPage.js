@@ -5,16 +5,14 @@ import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 
 import routes from '../constants/routes';
-import  Header from '../components/common/Header';
-import Table from '../components/common/Table';
-import FloatButton from '../components/common/FloatButton';
-
+import Header from '../components/common/Header';
+import Table from '../components/common/Table'
 
 type Props = {
   changePage: Function
 };
 
-class StockPage extends Component<Props> {
+class ProductPage extends Component<Props> {
   props: Props;
 
   pageNavigate = () =>{
@@ -26,8 +24,7 @@ class StockPage extends Component<Props> {
     return <div>
         <Header/>
         <Table/>
-        <FloatButton/>
-      </div>
+      </div>;
   }
 }
 
@@ -42,4 +39,4 @@ const mapDispatchToProps = dispatch => bindActionCreators({
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(StockPage)
+)(ProductPage)

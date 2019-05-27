@@ -1,5 +1,6 @@
 {
   "HOME": "/",
   "COUNTER": "/counter",
-  "STOCKLIST":"/stocklist"
+  "STOCKLIST":"/stocklist",
+  "PRODUCTLIST":"/productlist"
 }

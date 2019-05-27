@@ -9,7 +9,7 @@ import Home from '../components/Home';
 
 
 type Props = {
-  changePage: Function
+  changePage: () => void
 };
 
 class HomePage extends Component<Props> {

@@ -9,6 +9,7 @@ const Table = () => (
           <th scope="col">Size</th>
           <th scope="col">Color</th>
           <th scope="col">UOM</th>
+          <th scope="col">Qty</th>
         </tr>
       </thead>
       <tbody>
@@ -18,6 +19,7 @@ const Table = () => (
           <td>6x9</td>
           <td>Blue</td>
           <td>Packet</td>
+          <td>10.00</td>
         </tr>
       </tbody>
     </table>

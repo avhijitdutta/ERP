@@ -1,12 +1,18 @@
 // @flow
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
-import  routes  from '../../constants/routes.json';
+
 type Props = {
+  navigate: () => void,
+  select: string
 };
 
 export default class Header extends Component<Props> {
   props: Props;
+
+  navigate = (item, value) =>{
+    const {navigate} = this.props;
+    navigate(value);
+  }
 
   render() {
 
@@ -19,10 +25,10 @@ export default class Header extends Component<Props> {
 
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav mr-auto">
-            <li className="nav-item">
+            <li className={"nav-item " + (this.props.select === '1' ? 'active' : '')} onClick={(e) => {this.navigate(e, 1)}}>
               <a className="nav-link">Stock List </a>
             </li>
-            <li className="nav-item active">
+            <li className={"nav-item " + (this.props.select === '2' ? 'active' : '')}  onClick={(e) => {this.navigate(e, 2)}}>
               <a className="nav-link">Product List </a>
             </li>
             </ul>

@@ -1,0 +1,11 @@
+{
+  "categories": [
+    {"name":"Chapple", "value":"1"},
+    {"name":"Shoe", "value":"2"},
+    {"name":"PUE", "value":"3"}
+  ],
+  "UOM":[
+    {"name":"PAIR", "value":"3"},
+    {"name":"BOX", "value":"3"}
+  ]
+}

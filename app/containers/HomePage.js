@@ -30,7 +30,7 @@ const mapStateToProps = ({ counter }) => ({
 })
 
 const mapDispatchToProps = dispatch => bindActionCreators({
-  changePage: () => push(routes.STOCKLIST)
+  changePage: () => push(routes.PRODUCTLIST)
 }, dispatch)
 
 export default connect(

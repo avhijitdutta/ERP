@@ -64,7 +64,18 @@ class StockPage extends Component<Props> {
         productColor: '',
         productUOM: '',
         openingBalance: ''
-      }
+      },
+      productList:[
+        {
+          productCode: 'asdfg',
+          productDescription: 'AJANTA CHAPPAL',
+          productCategory: 'CHAPPAL',
+          productSize: '4x7',
+          productColor: 'Blue',
+          productUOM: 'BOX',
+          currentStock: 10
+        }
+      ]
     };
 
 
@@ -128,10 +139,10 @@ class StockPage extends Component<Props> {
     } = this.props;
 
     const { modal } = this.state;
-    const { formErrors, invalidForm } = this.state;
+    const { formErrors, invalidForm , productList} = this.state;
     return <div>
-        <Header/>
-        <Table/>
+        <Header select="1" navigate={this.pageNavigate} />
+        <Table productList={productList}/>
         <Modal isOpen={modal} toggle={this.toggle} className={className} size="lg">
           <ModalHeader toggle={this.toggle}>Add Product</ModalHeader>
           <Form  onSubmit={this.handleSubmit} noValidate>
@@ -263,7 +274,7 @@ const mapStateToProps = ({ counter }) => ({
 })
 
 const mapDispatchToProps = dispatch => bindActionCreators({
-  changePage: () => push(routes.STOCKLIST)
+  changePage: () => push(routes.PRODUCTLIST)
 }, dispatch)
 
 export default connect(
